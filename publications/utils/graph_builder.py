@@ -5,7 +5,7 @@ def is_mentioned(drugs: pd.DataFrame, title: str) -> bool:
     return drugs['drug'].lower() in title.lower()
 
 
-def build_nodes(pubs: pd.DataFrame, drugs: pd.DataFrame):
+def build_nodes(pubs: pd.DataFrame, drugs: pd.DataFrame) -> dict:
     nodes = {}
     for i in pubs.index:
         row = pubs.loc[i].to_dict()
@@ -33,7 +33,7 @@ def build_nodes(pubs: pd.DataFrame, drugs: pd.DataFrame):
     return nodes
 
 
-def build_edges(publications: pd.DataFrame, drugs: pd.DataFrame):
+def build_edges(publications: pd.DataFrame, drugs: pd.DataFrame) -> list:
     edges = []
     for i in publications.index:
         row = publications.loc[i]

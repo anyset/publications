@@ -4,6 +4,13 @@ import json
 
 class FileLoader:
     def __init__(self, file_path: str, file_format: str, column_mapping: dict | None = None, encoding: str = 'utf-8'):
+        """
+
+        :param file_path:  file path
+        :param file_format: expected values are 'json' or 'csv'
+        :param column_mapping: dict of columns to be renamed by value
+        :param encoding: default is 'utf-8'
+        """
         self.file_path = file_path
         self.file_format = file_format
         self.column_mapping = column_mapping

@@ -14,6 +14,13 @@ logger = logging.getLogger(__name__)
 
 
 def deduplicate(df: pd.DataFrame, group_columns: list[str]) -> pd.DataFrame:
+    """
+    Group by group_columns, deduplicate each aggregated field by first non-blank value.
+    Do not group by or deduplicate on None values.
+    :param df:
+    :param group_columns:
+    :return:
+    """
     # Do not deduplicate on group by null
     for col in group_columns:
         if df[col].isnull().all():
