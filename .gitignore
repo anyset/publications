@@ -1,0 +1,8 @@
+.idea
+terraform/.terraform
+terraform/.terraform.lock.hcl
+.env/
+*.DS_Store
+
+# Ignore pycache files
+**_pycache__/
